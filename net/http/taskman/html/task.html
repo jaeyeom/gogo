@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.Task.Title}} - TaskMan</title>
+  </head>
+  <body>
+    <script>
+      function setStatus(id, status) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/api/v1/task/" + id, false);
+        xhr.send();
+        var resp = JSON.parse(xhr.responseText);
+        var task = resp.task;
+        task.status = status;
+        xhr.open("PUT", "/api/v1/task/" + id, false);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("task="+encodeURIComponent(JSON.stringify(task)));
+        location.reload();
+      }
+    </script>
+    {{with .Error.Err}}
+    <p>{{.}}</p>
+    {{end}}
+    {{with .Task}}
+    <h1>{{.Title}}</h1>
+    <ul>
+      {{with .Status.String}}
+      <li>Status: {{.}}</li>
+      {{end}}
+      {{with .Deadline}}
+      <li>Deadline: {{.}}</li>
+      {{end}}
+      {{with .Priority}}
+      <li>Priority: {{.}}</li>
+      {{end}}
+    </ul>
+    {{end}}
+    <p>
+      Change:
+      <button onclick="setStatus('{{.ID}}', 'TODO');">Mark as TODO</button>
+      <button onclick="setStatus('{{.ID}}', 'DONE');">Mark as DONE</button>
+    </p>
+
+  </body>
+</html>
