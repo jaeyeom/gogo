@@ -1,10 +1,10 @@
-package main
+package intset
 
 import "fmt"
 
-//go:generate multisetgen -multiset_typename=IntSet -element_typename=int
+//go:generate multisetgen -multiset_typename=IntSet -element_typename=int -package_name=intset
 
-func main() {
+func Example() {
 	m := NewIntSet()
 	fmt.Println(m.String())
 	fmt.Println(m.Count(3))

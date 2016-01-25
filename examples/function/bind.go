@@ -1,7 +1,10 @@
 package function
 
-func InsertFunc(m MultiSet) func(val string) {
+import "github.com/jaeyeom/gogo/generate/stringset"
+
+func InsertFunc(m stringset.StringSet) func(val string) {
 	return func(val string) {
-		Insert(m, val)
+		m.Insert(val)
 	}
+	// Or it could be simply: return m.Insert
 }
