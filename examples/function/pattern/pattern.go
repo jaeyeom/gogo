@@ -1,4 +1,8 @@
-package function
+// Package pattern is an example for Go functions. The concept of
+// coding is from Section 1.3 of "Structure and Interpretation of
+// Computer Programs, second edition, by Harold Abelson, Gerald
+// Sussman and Julie Sussman", published by The MIT Press.
+package pattern
 
 import "math"
 
