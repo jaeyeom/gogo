@@ -7,5 +7,5 @@ import (
 )
 
 func main() {
-	fmt.Println(seq.Fib(6))
+	fmt.Println(seq.FibNth(6))
 }
