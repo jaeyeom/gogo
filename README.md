@@ -25,6 +25,8 @@
 
 ### 2장 ###
 
+윈도우에서 설치는 [Chocolatey](https://chocolatey.org/)를 이용하시면 편리합니다. 책의 원고를 쓸 때는 이런 것이 있는 줄 몰랐습니다. 북마크 아래 쪽의 설치법을 참고해 주세요.
+
 * [Go 언어 홈페이지 (영어)](http://golang.org)
     * [다운로드 (영어)](https://golang.org/dl/)
     * [설치 (영어)](https://golang.org/doc/install)
@@ -41,9 +43,35 @@
     * [Wide](https://github.com/b3log/wide)
 * [GoDoc](https://godoc.org)
 * 윈도우용
+    * [Chocolatey](https://chocolatey.org/)
     * [MinGW](http://www.mingw.org/)
     * [msysgit](https://msysgit.github.io/)
 
+#### 윈도우에서 설치법 ####
+
+윈도우에서 [Chocolatey](https://chocolatey.org/)를 이용하여 설치하는 방법입니다. 먼저 관리자 권한으로 명령 프롬프트인 `cmd.exe`를 실행해야 합니다. 일반적인 레이아웃에서 좌측 하단에 있는 윈도우 아이콘 (혹은 시작 버튼)에서 마우스 오른쪽 클릭을 합니다. 그 때 "명령 프롬프트 (관리자)"라고 되어 있는 것을 클릭해서 엽니다. 다른 방법으로는 윈도우 검색 입력 상자에 `cmd`를 입력한 뒤 명령 프롬프트 아이콘이 나타나면 마우스 오른쪽 클릭을 한 뒤 관리자로 열면 됩니다.
+
+이제 Chocolatey에서 안내하는대로 다음 명령을 수행하여 실행합니다. 명령이 변경될 수도 있으므로 Chocolatey 홈페이지에서 명령을 찾아서 긁어 붙이시기 바랍니다. 아래 명령은 한 줄입니다.
+
+```
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+```
+
+설치가 될 것입니다. 이제 git을 설치합니다. 유의할 점은 새로 설치하기 전에 명령 프롬프트를 닫고 다시 열어야 한다는 점입니다. 명령 프롬프트를 닫고 다시 위에서 설명한대로 **관리자 권한** 으로 명령 프롬프트를 엽니다.
+
+이제 아래와 같은 명령을 수행합니다.
+
+```
+choco install git
+```
+
+스크립트를 수행할 것인지 물어보면 `1`을 선택하여 수행하면 됩니다. 수행이 끝났으면 다시 명령 프롬프트를 닫고 다시 관리자 권한으로 연 다음에 아래 명령을 수행합니다.
+
+```
+choco install golang
+```
+
+참 쉽죠? 마찬가지로 새로 명령 프롬프트를 열어서 go를 수행해 보면 제대로 실행되는 것을 알 수 있습니다. 나머지 `GOPATH` 및 작업 디렉토리 설정하는 방법은 책을 참고하시면 되겠습니다.
 
 ### 3장 ###
 
