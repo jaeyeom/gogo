@@ -13,8 +13,9 @@ func Example_Gob() {
 	if err := enc.Encode(data); err != nil {
 		fmt.Println(err)
 	}
-	for start := 0; start < len(b.Bytes()); start += 16 {
-		end := start + 16
+	const width = 16
+	for start := 0; start < len(b.Bytes()); start += width {
+		end := start + width
 		if end > len(b.Bytes()) {
 			end = len(b.Bytes())
 		}
