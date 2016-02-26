@@ -2,7 +2,7 @@ package pattern
 
 import "fmt"
 
-func ExampleSqrt() {
+func Example_Sqrt() {
 	fmt.Printf("%.5f\n", Sqrt(2))
 	// Output:
 	// 1.41421

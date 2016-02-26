@@ -13,7 +13,7 @@ func ExampleAddOne() {
 	// [2 3 4 5]
 }
 
-func ExampleFuncLiteral() {
+func Example_funcLiteral() {
 	func() {
 		fmt.Println("Hello!")
 	}()
@@ -21,7 +21,7 @@ func ExampleFuncLiteral() {
 	// Hello!
 }
 
-func ExampleFuncLiteralVar() {
+func Example_funcLiteralVar() {
 	printHello := func() {
 		fmt.Println("Hello!")
 	}
@@ -30,7 +30,7 @@ func ExampleFuncLiteralVar() {
 	// Hello!
 }
 
-func ExampleReadFrom_Print() {
+func ExampleReadFrom_print() {
 	r := strings.NewReader("bill\ntom\njane\n")
 	err := ReadFrom(r, func(line string) {
 		fmt.Println("(", line, ")")
@@ -44,7 +44,7 @@ func ExampleReadFrom_Print() {
 	// ( jane )
 }
 
-func ExampleReadFrom_Append() {
+func ExampleReadFrom_append() {
 	r := strings.NewReader("bill\ntom\njane\n")
 	var lines []string
 	err := ReadFrom(r, func(line string) {

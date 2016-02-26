@@ -6,7 +6,7 @@ import (
 	"github.com/jaeyeom/gogo/seq"
 )
 
-func TestFib(t *testing.T) {
+func TestFibNth(t *testing.T) {
 	cases := []struct {
 		in, want int
 	}{

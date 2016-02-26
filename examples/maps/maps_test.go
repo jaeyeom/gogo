@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestCount_DeepEqual(t *testing.T) {
+func TestCount_deepEqual(t *testing.T) {
 	codeCount := map[rune]int{}
 	count("가나다나", codeCount)
 	if !reflect.DeepEqual(
@@ -18,7 +18,7 @@ func TestCount_DeepEqual(t *testing.T) {
 	}
 }
 
-func TestCount_If(t *testing.T) {
+func TestCount_if(t *testing.T) {
 	codeCount := map[rune]int{}
 	count("가나다나", codeCount)
 	if len(codeCount) != 3 {
@@ -30,7 +30,7 @@ func TestCount_If(t *testing.T) {
 	}
 }
 
-func ExampleCount_Sort() {
+func ExampleCount_sort() {
 	codeCount := map[rune]int{}
 	count("가나다나", codeCount)
 	var keys sort.IntSlice

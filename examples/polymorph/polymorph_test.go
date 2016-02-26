@@ -26,7 +26,7 @@ func ExampleWrongRectangle() {
 	// Output: 24
 }
 
-func ExampleTotalArea_MoreTypes() {
+func ExampleTotalArea_moreTypes() {
 	fmt.Println(TotalArea([]Shape{
 		Square{3},
 		Rectangle{4, 5},

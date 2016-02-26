@@ -2,7 +2,7 @@ package concurrency
 
 import "fmt"
 
-func Example_Goroutine() {
+func Example_goroutine() {
 	go func() {
 		fmt.Println("In goroutine")
 	}()
@@ -10,7 +10,7 @@ func Example_Goroutine() {
 	// Non-deterministic!
 }
 
-func ExampleSimpleChannel() {
+func Example_simpleChannel() {
 	c := make(chan int)
 	go func() {
 		c <- 1
@@ -26,7 +26,7 @@ func ExampleSimpleChannel() {
 	// 3
 }
 
-func ExampleSimpleChannel_ForLoop() {
+func Example_simpleChannelForLoop() {
 	c := make(chan int)
 	go func() {
 		c <- 1
@@ -43,7 +43,7 @@ func ExampleSimpleChannel_ForLoop() {
 	// 3
 }
 
-func ExampleSimpleChannel_ReturnChannel() {
+func Example_simpleChannelReturnChannel() {
 	c := func() <-chan int {
 		c := make(chan int)
 		go func() {
@@ -76,7 +76,7 @@ func BabyNames(first, second string) <-chan string {
 	return c
 }
 
-func ExampleBabyNames() {
+func Example_babyNames() {
 	for n := range BabyNames("성정명재경", "준호우훈진") {
 		fmt.Print(n, ", ")
 	}
@@ -84,7 +84,7 @@ func ExampleBabyNames() {
 	// 성준, 성호, 성우, 성훈, 성진, 정준, 정호, 정우, 정훈, 정진, 명준, 명호, 명우, 명훈, 명진, 재준, 재호, 재우, 재훈, 재진, 경준, 경호, 경우, 경훈, 경진,
 }
 
-func ExampleClosedChannel() {
+func Example_closedChannel() {
 	c := make(chan int)
 	close(c)
 	fmt.Println(<-c)

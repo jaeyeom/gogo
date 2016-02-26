@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func ExampleTaskMarshalJSON() {
+func ExampleTask_marshalJSON() {
 	t := Task{
 		"Laundry",
 		DONE,
@@ -25,7 +25,7 @@ func ExampleTaskMarshalJSON() {
 	// {"title":"Laundry","status":"DONE","deadline":1439739780}
 }
 
-func ExampleTaskUnmarshalJSON() {
+func ExampleTask_unmarshalJSON() {
 	b := []byte(`{"Title":"Buy Milk","Status":"DONE","Deadline":1439739780}`)
 	t := Task{}
 	err := json.Unmarshal(b, &t)
@@ -42,7 +42,7 @@ func ExampleTaskUnmarshalJSON() {
 	// 2015-08-16 15:43:00 +0000 UTC
 }
 
-func ExampleMapMarshalJSON() {
+func Example_mapMarshalJSON() {
 	b, _ := json.Marshal(map[string]interface{}{"Name": "John", "Age": 16})
 	fmt.Println(string(b))
 	// Output:

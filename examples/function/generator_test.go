@@ -11,7 +11,7 @@ func ExampleNewIntGenerator() {
 	// 6 7 8 9 10
 }
 
-func ExampleNewIntGenerator_Multiple() {
+func ExampleNewIntGenerator_multiple() {
 	gen1 := NewIntGenerator()
 	gen2 := NewIntGenerator()
 	fmt.Println(gen1(), gen1(), gen1())

@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-func Example_Gob() {
+func Example_gob() {
 	var b bytes.Buffer
 	enc := gob.NewEncoder(&b)
 	data := map[string]string{"N": "J"}

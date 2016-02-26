@@ -27,7 +27,7 @@ func ExamplePlusOne() {
 	// 10
 }
 
-func Example_ContextSwitching() {
+func Example_contextSwitching() {
 	c := make(chan int)
 	for i := 0; i < 3; i++ {
 		go func(i int) {
@@ -61,7 +61,7 @@ func ExampleFanIn3() {
 	// Non-deterministic!
 }
 
-func ExamplePlusOne_ConsumeAll() {
+func ExamplePlusOne_consumeAll() {
 	c := make(chan int)
 	go func() {
 		defer close(c)
@@ -91,7 +91,7 @@ func ExamplePlusOne_ConsumeAll() {
 	// 18
 }
 
-func ExamplePlusOne_WithCancel() {
+func ExamplePlusOne_withCancel() {
 	c := make(chan int)
 	go func() {
 		defer close(c)

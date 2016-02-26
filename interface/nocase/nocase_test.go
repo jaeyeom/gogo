@@ -6,7 +6,7 @@ import (
 	"sort"
 )
 
-func ExampleCaseInsensitiveSort() {
+func ExampleCaseInsensitive_sort() {
 	apple := CaseInsensitive([]string{
 		"iPhone", "iPad", "MacBook", "AppStore",
 	})

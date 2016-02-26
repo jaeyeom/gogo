@@ -16,7 +16,7 @@ func ExampleFibChan() {
 	// Output: 0,1,1,2,3,5,8,13,
 }
 
-func ExampleFibonacciGenerator() {
+func ExampleFibGen() {
 	fib := FibGen(15)
 	for n := fib(); n >= 0; n = fib() {
 		fmt.Print(n, ",")

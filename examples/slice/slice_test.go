@@ -2,7 +2,7 @@ package slice
 
 import "fmt"
 
-func ExampleSlicing() {
+func Example_slicing() {
 	nums := []int{1, 2, 3, 4, 5}
 	fmt.Println(nums)
 	fmt.Println(nums[1:3])
@@ -15,7 +15,7 @@ func ExampleSlicing() {
 	// [1 2 3]
 }
 
-func ExampleAppend() {
+func Example_append() {
 	f1 := []string{"사과", "바나나", "토마토"}
 	f2 := []string{"포도", "딸기"}
 	f3 := append(f1, f2...)     // 이어붙이기
@@ -32,7 +32,7 @@ func ExampleAppend() {
 	// [사과 바나나 포도 딸기]
 }
 
-func ExampleSliceCap() {
+func Example_sliceCap() {
 	nums := []int{1, 2, 3, 4, 5}
 
 	fmt.Println(nums)
