@@ -73,6 +73,11 @@
     * [fmt](https://golang.org/pkg/fmt/)
 * [위키백과: 이진 검색 알고리즘](https://ko.wikipedia.org/wiki/이진_검색_알고리즘)
 
+#### 추가 컨텐츠 ####
+
+문자열 부분에 추가 컨텐츠가 있습니다.
+
+* [문자열 예제](https://github.com/jaeyeom/gogo/tree/master/examples/strings)
 
 ### 4장 ###
 
