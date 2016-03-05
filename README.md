@@ -215,19 +215,3 @@
     github.com/jaeyeom/gogo/examples/ref
     github.com/jaeyeom/gogo/examples/visitor
 
-
-## 연습문제 풀이 ##
-
-풀이는 제공이 되지 않지만 책에 있는 코드가 답이 되는 경우가 있습니다.
-
-### 1장 ###
-
-1장의 연습 문제에서 하노이 탑 문제의 풀이는 다음 경로에 있습니다.
-
-[github.com/jaeyeom/gogo/hanoi](https://github.com/jaeyeom/gogo/tree/master/hanoi)
-
-### 3장 ###
-
-멀티 셋 구현하는 문제는 비슷한 코드가 다음 경로에 있습니다.
-
-[github.com/jaeyeom/gogo/generate/stringset](https://github.com/jaeyeom/gogo/tree/master/generate/stringset/)
