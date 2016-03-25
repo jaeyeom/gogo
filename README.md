@@ -75,9 +75,11 @@
 
 #### 추가 컨텐츠 ####
 
-문자열 부분에 추가 컨텐츠가 있습니다.
+3장에 추가 컨텐츠들이 있습니다. 책에는 실리지 않았지만 읽어보시면
+도움이 될 수 있는 내용들입니다.
 
-* [문자열 예제](https://github.com/jaeyeom/gogo/tree/master/examples/strings)
+* [문자열](https://github.com/jaeyeom/gogo/tree/master/examples/strings)
+* [슬라이스](https://github.com/jaeyeom/gogo/tree/master/examples/slice)
 
 ### 4장 ###
 
