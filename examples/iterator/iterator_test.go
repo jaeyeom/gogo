@@ -19,15 +19,19 @@ func doSomething(num int) int {
 }
 
 func BenchmarkCallback(b *testing.B) {
-	iter := func(f func(num int)) {
+	// If f returns false, stop the iteration.
+	iter := func(f func(num int) bool) {
 		for i := 0; i < size; i++ {
-			f(doSomething(i))
+			if !f(doSomething(i)) {
+				break
+			}
 		}
 	}
 
 	for i := 0; i < b.N; i++ {
-		iter(func(num int) {
+		iter(func(num int) bool {
 			_ = num
+			return true
 		})
 	}
 }
@@ -85,12 +89,14 @@ func BenchmarkChannelWithContext(b *testing.B) {
 		return out
 	}
 
-	ctx := context.Background()
+	ctx, cancel := context.WithCancel(context.Background())
 	for i := 0; i < b.N; i++ {
 		for num := range iter(ctx) {
 			_ = num
+			// cancel()
 		}
 	}
+	_ = cancel  // No-op
 }
 
 func BenchmarkBufferedChannelWithContext(b *testing.B) {
@@ -109,12 +115,14 @@ func BenchmarkBufferedChannelWithContext(b *testing.B) {
 		return out
 	}
 
-	ctx := context.Background()
+	ctx, cancel := context.WithCancel(context.Background())
 	for i := 0; i < b.N; i++ {
 		for num := range iter(ctx) {
 			_ = num
+			// cancel()
 		}
 	}
+	_ = cancel  // No-op
 }
 
 func BenchmarkFunc(b *testing.B) {
