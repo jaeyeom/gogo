@@ -80,6 +80,7 @@
 
 * [문자열](https://github.com/jaeyeom/gogo/tree/master/examples/strings)
 * [슬라이스](https://github.com/jaeyeom/gogo/tree/master/examples/slice)
+* [반복자](https://github.com/jaeyeom/gogo/tree/master/examples/iterator)
 
 ### 4장 ###
 
