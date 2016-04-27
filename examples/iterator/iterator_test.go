@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	size = 10000
+	size     = 10000
 	eachTask = 1000
 )
 
@@ -96,7 +96,7 @@ func BenchmarkChannelWithContext(b *testing.B) {
 			// cancel()
 		}
 	}
-	_ = cancel  // No-op
+	_ = cancel // No-op
 }
 
 func BenchmarkBufferedChannelWithContext(b *testing.B) {
@@ -122,7 +122,7 @@ func BenchmarkBufferedChannelWithContext(b *testing.B) {
 			// cancel()
 		}
 	}
-	_ = cancel  // No-op
+	_ = cancel // No-op
 }
 
 func BenchmarkFunc(b *testing.B) {
@@ -143,6 +143,7 @@ func BenchmarkFunc(b *testing.B) {
 }
 
 type iterator int
+
 func (i *iterator) Next() int {
 	out := int(*i)
 	*i = iterator(doSomething(int(*i + 1)))
