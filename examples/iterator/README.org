@@ -121,7 +121,7 @@ iterator_test.go 파일에는 2개의 상수가 있습니다. 하나는 반복�
 사용법이 직관적이지 않은 단점이 있습니다.
 
 사용하는 쪽에서 중간에 중단하고 싶으면 대부분의 경우에 함수를 호출하지
-않으면 됩니다. 
+않으면 됩니다.
 
 : itr := iter()
 : for num, ok := itr(); ok; num, ok = itr() {
@@ -149,5 +149,5 @@ Java 스타일과 흡사합니다. 사용하는 쪽에서 중간에 중단하고
 : itr := iterator(0)
 : for num := itr.Next(); !itr.Done(); num = itr.Next() {
 : 	_ = num
-:       // itr.Close(); break
+: 	// itr.Close(); break
 : }
