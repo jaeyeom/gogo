@@ -24,7 +24,7 @@ func (err ResponseError) MarshalJSON() ([]byte, error) {
 // UnmarshalJSON parses the JSON representation of the error.
 func (err *ResponseError) UnmarshalJSON(b []byte) error {
 	var v interface{}
-	if err := json.Unmarshal(b, v); err != nil {
+	if err := json.Unmarshal(b, &v); err != nil {
 		return err
 	}
 	if v == nil {
