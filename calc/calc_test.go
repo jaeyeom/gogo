@@ -30,23 +30,28 @@ func ExampleNewEvaluator() {
 		"+":   NewStrSet("**", "*", "/", "mod", "+", "-"),
 		"-":   NewStrSet("**", "*", "/", "mod", "+", "-"),
 	})
-	fmt.Println(eval("5"))
-	fmt.Println(eval("1 + 2"))
-	fmt.Println(eval("1 - 2 - 4"))
-	fmt.Println(eval("( 3 - 2 ** 3 ) * ( -2 )"))
-	fmt.Println(eval("3 * ( 3 + 1 * 3 ) / ( -2 )"))
-	fmt.Println(eval("3 * ( ( 3 + 1 ) * 3 ) / 2"))
-	fmt.Println(eval("1 + 2 ** 10 * 2"))
-	fmt.Println(eval("2 ** 3 mod 3"))
-	fmt.Println(eval("2 ** 2 ** 3"))
+	exs := []string{
+		"5",
+		"1 + 2",
+		"1 - 2 - 4",
+		"( 3 - 2 ** 3 ) * ( -2 )",
+		"3 * ( 3 + 1 * 3 ) / ( -2 )",
+		"3 * ( ( 3 + 1 ) * 3 ) / 2",
+		"1 + 2 ** 10 * 2",
+		"2 ** 3 mod 3",
+		"2 ** 2 ** 3",
+	}
+	for _, ex := range exs {
+		fmt.Printf("%s = %d\n", ex, eval(ex))
+	}
 	// Output:
-	// 5
-	// 3
-	// -5
-	// 10
-	// -9
-	// 18
-	// 2049
-	// 2
-	// 256
+	// 5 = 5
+	// 1 + 2 = 3
+	// 1 - 2 - 4 = -5
+	// ( 3 - 2 ** 3 ) * ( -2 ) = 10
+	// 3 * ( 3 + 1 * 3 ) / ( -2 ) = -9
+	// 3 * ( ( 3 + 1 ) * 3 ) / 2 = 18
+	// 1 + 2 ** 10 * 2 = 2049
+	// 2 ** 3 mod 3 = 2
+	// 2 ** 2 ** 3 = 256
 }

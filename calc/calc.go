@@ -8,7 +8,7 @@ import (
 // String set type
 type StrSet map[string]struct{}
 
-// Returns a new StrSet.
+// NewStrSet returns a new StrSet with the give strs.
 func NewStrSet(strs ...string) StrSet {
 	m := StrSet{}
 	for _, str := range strs {
@@ -23,6 +23,9 @@ type BinOp func(int, int) int
 // PrecMap is a map keyed by operator to set of higher precedence operators.
 type PrecMap map[string]StrSet
 
+// NewEvaluator creates a new evaluator with the given binary operations and
+// precedence information. The evaluator takes the expression and returns the
+// evaluation result.
 func NewEvaluator(opMap map[string]BinOp, prec PrecMap) func(expr string) int {
 	return func(expr string) int {
 		return Eval(opMap, prec, expr)
