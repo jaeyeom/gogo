@@ -1,9 +1,8 @@
 package concurrency
 
 import (
+	"context"
 	"sync"
-
-	"golang.org/x/net/context"
 )
 
 // PlusOne returns a channel of num + 1 for nums received from in.
