@@ -16,7 +16,7 @@ const (
 	DONE
 )
 
-// String returns the string representaion of s. This can be generated
+// String returns the string representation of s. This can be generated
 // by stringer tool, though this function is hand-written.
 func (s status) String() string {
 	switch s {

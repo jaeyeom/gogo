@@ -1,7 +1,7 @@
 // Package hangul provides basic functions for Hangul processing.
 package hangul
 
-var (
+const (
 	start = rune(44032) // "가"의 유니코드 포인트
 	end   = rune(55204) // "힣" 다음 글자의 유니코드 포인트
 )
