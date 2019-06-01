@@ -9,7 +9,7 @@ type InMemoryAccessor struct {
 }
 
 // NewInMemoryAccessor returns a new InMemoryAccessor.
-func NewInMemoryAccessor() Accessor {
+func NewInMemoryAccessor() *InMemoryAccessor {
 	return &InMemoryAccessor{
 		tasks:  map[ID]Task{},
 		nextID: int64(1),

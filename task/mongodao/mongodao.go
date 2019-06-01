@@ -15,7 +15,7 @@ type MongoAccessor struct {
 }
 
 // New returns a new MongoAccessor.
-func New(path, db, c string) task.Accessor {
+func New(path, db, c string) *MongoAccessor {
 	session, err := mgo.Dial(path)
 	if err != nil {
 		return nil
