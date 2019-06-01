@@ -13,6 +13,7 @@ func (acc *Accessor) Use() {
 	// do something
 	acc.L.Lock()
 	// Use acc.R
+	_ = acc.R
 	acc.L.Unlock()
 	// Do something else
 }
