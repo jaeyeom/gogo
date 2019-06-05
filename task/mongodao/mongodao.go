@@ -3,9 +3,9 @@
 package mongodao
 
 import (
+	"github.com/globalsign/mgo"
+	"github.com/globalsign/mgo/bson"
 	"github.com/jaeyeom/gogo/task"
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
 )
 
 // MongoAccessor is an Accessor for MongoDB.
