@@ -126,6 +126,14 @@
     * [sort](http://golang.org/pkg/sort)
 * [위키백과: 사전식 순서](https://ko.wikipedia.org/wiki사전식_순서)
 
+#### 추가 컨텐츠 ####
+
+5장에 추가 컨텐츠들이 있습니다. 책에는 실리지 않았지만 읽어보시면
+도움이 될 수 있는 내용들입니다.
+
+* [사례연구: PubSub 테스팅](https://github.com/jaeyeom/gogo/tree/master/examples/pubsubtest) -
+  코드를 이해하려면 7장의 지식도 필요합니다. 아마도 책을 다 읽은 뒤 어느 시점에
+  읽으시면 도움이 더 될 것 같습니다.
 
 ### 6장 ###
 
@@ -156,7 +164,6 @@
 * [Packages](https://golang.org/pkg)
     * [sync](https://golang.org/pkg/sync)
         * [atomic](https://golang.org/pkg/atomic)
-
 
 ### 8장 ###
 
