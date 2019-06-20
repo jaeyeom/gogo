@@ -15,14 +15,14 @@ func (t *Topic) Publish(ctx context.Context, msg *Message) *PublishResult
 
 ```go
 // Synchronous call
-serverID, err := topic.Publish(ctx, msg).Get()
+serverID, err := topic.Publish(ctx, msg).Get(ctx)
 
 // Asynchronous call
 result := topic.Publish(ctx, msg)
 for {
   select {
   case <-result.Ready():
-    serverID, error := result.Get()
+    serverID, error := result.Get(ctx)
     // Do something.
   case ...:
     // ...
@@ -41,7 +41,7 @@ for {
 done := make(chan struct{})
 go func() {
   defer close(done)
-  serverID, err := topic.Publish(ctx, msg).Get()
+  serverID, err := topic.Publish(ctx, msg).Get(ctx)
   // Do something
 }()
 ```
@@ -54,10 +54,10 @@ go func() {
 
 한 가지 방법은 어차피 동기화 호출만 있어도 비동기 구현이 가능하므로
 `SyncPublisher`라고 하는 인터페이스와 구현을 만드는 것이다. 이것은 비교적
-간단하게 할 수 있고, `gochan.go`와 `gochan_test.goc` 파일에 시연되어 있다.
-이렇게 하지 않고 꼭 인터페이스를 이용하여 Ready()와 Get() 메서드를 호출하는
-방식으로 구현하고 싶다면, 더 복잡해지지만 `interface.go`와 `interface_test.go`
-파일을 참고하자.
+간단하게 할 수 있고, `gochan.go`와 `gochan_test.go` 파일에 시연되어 있다. 이렇게
+하지 않고 꼭 인터페이스를 이용하여 Ready()와 Get() 메서드를 호출하는 방식으로
+구현하고 싶다면, 더 복잡해지지만 `interface.go`와 `interface_test.go` 파일을
+참고하자.
 
 이제 왠만한 테스트는 쉽게 할 수 있을 것이다. 두 방법 모두 mock 패키지를 이용하여
 테스트 할 수도 있다.
