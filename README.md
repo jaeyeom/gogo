@@ -100,10 +100,10 @@
         * [Regexp.ReplaceAllStringFunc](https://golang.org/pkg/regexp/#Regexp.ReplaceAllStringFunc)
 * [The Go Blog](https://blog.golang.org)
     * [Error handling and Go](https://blog.golang.org/error-handling-and-go)
+    * [Errors are values](https://blog.golang.org/errors-are-values)
 * [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/full-text/book/book.html)
     * [1.3 Formulating Abstractions with Higher-Order Procedures](https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-12.html#%_sec_1.3)
 * [위키백과: 뉴턴 방법](https://ko.wikipedia.org/wiki/뉴턴_방법)
-
 
 ### 5장 ###
 
@@ -151,7 +151,14 @@
 * [Mgo](https://labix.org/mgo)
 * [The Go Blog](https://blog.golang.org)
     * [Error handling and Go](https://blog.golang.org/error-handling-and-go)
+    * [Errors are values](https://blog.golang.org/errors-are-values)
 
+#### 추가 컨텐츠 ####
+
+6장에 추가 컨텐츠가 있습니다. 책에는 실리지 않았지만 읽어보시면 도움이 될 수
+있는 내용입니다.
+
+* [에러 처리](https://github.com/jaeyeom/gogo/tree/master/examples/errorh)
 
 ### 7장 ###
 
