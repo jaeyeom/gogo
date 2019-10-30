@@ -3,7 +3,7 @@ package iterator
 import (
 	"testing"
 
-	"golang.org/x/net/context"
+	"context"
 )
 
 const (

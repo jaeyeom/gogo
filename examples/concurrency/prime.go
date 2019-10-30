@@ -3,7 +3,7 @@ package concurrency
 import (
 	"fmt"
 
-	"golang.org/x/net/context"
+	"context"
 )
 
 // Range returns a channel and sends ints
