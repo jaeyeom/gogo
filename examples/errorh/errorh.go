@@ -1,11 +1,14 @@
 // Example for the new error handling.
 package errorh
 
-import "golang.org/x/xerrors"
+import (
+	"errors"
+	"fmt"
+)
 
 var (
-	ErrMyError     = xerrors.New("my error")
-	ErrCannotClose = xerrors.New("error while closing")
+	ErrMyError     = errors.New("my error")
+	ErrCannotClose = errors.New("error while closing")
 )
 
 func myFunc() error {
@@ -15,7 +18,7 @@ func myFunc() error {
 func f() error {
 	err := myFunc()
 	if err != nil {
-		return xerrors.Errorf("error while calling myFunc: %w", err)
+		return fmt.Errorf("error while calling myFunc: %w", err)
 	}
 	return nil
 }
@@ -23,7 +26,7 @@ func f() error {
 func g() error {
 	err := f()
 	if err != nil {
-		return xerrors.Errorf("error while calling f: %w", err)
+		return fmt.Errorf("error while calling f: %w", err)
 	}
 	return nil
 }
@@ -37,12 +40,12 @@ func h() (err error) {
 		e := c()
 		if e != nil {
 			// Choose to lose wrapping information of ErrCannotClose.
-			err = xerrors.Errorf("%v: %w", e, err)
+			err = fmt.Errorf("%v: %w", e, err)
 		}
 	}()
 	err = g()
 	if err != nil {
-		return xerrors.Errorf("error while calling g: %w", err)
+		return fmt.Errorf("error while calling g: %w", err)
 	}
 	return nil
 }

@@ -1,17 +1,16 @@
 package errorh
 
 import (
+	"errors"
 	"fmt"
-
-	"golang.org/x/xerrors"
 )
 
 func Example_wrapping() {
 	err := h()
 	// fmt.Printf("%+v\n", err) // will produce the trace
-	fmt.Println(xerrors.Is(err, ErrMyError))
-	fmt.Println(xerrors.Is(err, ErrCannotClose))
-	for ; err != nil; err = xerrors.Unwrap(err) {
+	fmt.Println(errors.Is(err, ErrMyError))
+	fmt.Println(errors.Is(err, ErrCannotClose))
+	for ; err != nil; err = errors.Unwrap(err) {
 		fmt.Println(err)
 	}
 	// Output Example (for %+v trace):
