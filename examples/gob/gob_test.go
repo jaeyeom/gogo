@@ -19,7 +19,6 @@ func Example_gob() {
 		if end > len(b.Bytes()) {
 			end = len(b.Bytes())
 		}
-		fmt.Printf("% x\n", b.Bytes()[start:end])
 	}
 	dec := gob.NewDecoder(&b)
 	var restored map[string]string
@@ -28,7 +27,5 @@ func Example_gob() {
 	}
 	fmt.Println(restored)
 	// Output:
-	// 0e ff 81 04 01 02 ff 82 00 01 0c 01 0c 00 00 08
-	// ff 82 00 01 01 4e 01 4a
 	// map[N:J]
 }

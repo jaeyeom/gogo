@@ -39,7 +39,7 @@ func ExampleCount_sort() {
 	}
 	sort.Sort(keys)
 	for _, key := range keys {
-		fmt.Println(string(key), codeCount[rune(key)])
+		fmt.Println(string(rune(key)), codeCount[rune(key)])
 	}
 	// Output:
 	// 가 1
